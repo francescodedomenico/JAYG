@@ -46,6 +46,7 @@
             this.ShellOutputForm.Location = new System.Drawing.Point(12, 146);
             this.ShellOutputForm.Multiline = true;
             this.ShellOutputForm.Name = "ShellOutputForm";
+            this.ShellOutputForm.ReadOnly = true;
             this.ShellOutputForm.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.ShellOutputForm.Size = new System.Drawing.Size(361, 91);
             this.ShellOutputForm.TabIndex = 0;

@@ -53,6 +53,18 @@ namespace youtube_dl_GUI
             UIThread.IsBackground = true;
             UIThread.Start();
         }
+        private void enableControls()
+        {
+            buttonDownloadAudio.Enabled = true;
+            buttonDownloadVideo.Enabled = true;
+            buttonUpdate.Enabled = true;
+        }
+        private void disableControls()
+        {
+            buttonDownloadAudio.Enabled = false;
+            buttonDownloadVideo.Enabled = false;
+            buttonUpdate.Enabled = false;
+        }
         private void audioYTDL()
         {
             past = ShellOutputForm.Text;
@@ -60,6 +72,9 @@ namespace youtube_dl_GUI
             var downloadLink = linkTextBox.Text;
             var ffmpegpath = "--ffmpeg-location /bin/ffmpeg.exe";
             var audioFormat = "";
+            /// Disable controls
+            disableControls();
+
             switch (comboAudioBox.SelectedIndex)
             {
                 case 0:
@@ -101,13 +116,16 @@ namespace youtube_dl_GUI
             ShellOutputForm.AppendText("Audio download has ended.\r\n");
             ShellOutputForm.SelectionStart = ShellOutputForm.Text.Length;
             ShellOutputForm.ScrollToCaret();
+            enableControls();
         }
         private void updateYTDL()
         {
             buffer = "Checking for updates, please wait...\r\n";
             past = ShellOutputForm.Text;
             performingAction = "downloading";
-            
+            /// Disable controls
+            disableControls();
+
             using (Process sortProcess = new Process())
             {
                 sortProcess.StartInfo.FileName = @".\bin\youtube-dl.exe";
@@ -133,6 +151,7 @@ namespace youtube_dl_GUI
             ShellOutputForm.AppendText("Update has ended.\r\n");
             ShellOutputForm.SelectionStart = ShellOutputForm.Text.Length;
             ShellOutputForm.ScrollToCaret();
+            enableControls();
         }
         private void runYTDL()
         {
@@ -140,6 +159,9 @@ namespace youtube_dl_GUI
             performingAction = "downloading";
             var downloadLink = linkTextBox.Text;
             var ffmpegpath = "--ffmpeg-location /bin/ffmpeg.exe";
+            /// Disable controls
+            disableControls();
+
             using (Process sortProcess = new Process())
             {
                 sortProcess.StartInfo.FileName = @".\bin\youtube-dl.exe";
@@ -165,6 +187,7 @@ namespace youtube_dl_GUI
             ShellOutputForm.AppendText("Download has ended.\r\n");
             ShellOutputForm.SelectionStart = ShellOutputForm.Text.Length;
             ShellOutputForm.ScrollToCaret();
+            enableControls();
         }
         private void button1_Click(object sender, EventArgs e)
         {

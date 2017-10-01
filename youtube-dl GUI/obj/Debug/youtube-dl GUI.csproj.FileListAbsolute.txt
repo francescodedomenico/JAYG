@@ -1,1 +1,11 @@
 C:\Users\Francesco\Documents\GitHub\JAYG\youtube-dl GUI\bin\Debug\JAYG.exe.config
+C:\Users\Francesco\Documents\GitHub\JAYG\JAYG\youtube-dl GUI\bin\Debug\JAYG.exe.config
+C:\Users\Francesco\Documents\GitHub\JAYG\JAYG\youtube-dl GUI\bin\Debug\JAYG.exe
+C:\Users\Francesco\Documents\GitHub\JAYG\JAYG\youtube-dl GUI\bin\Debug\JAYG.pdb
+C:\Users\Francesco\Documents\GitHub\JAYG\JAYG\youtube-dl GUI\obj\Debug\youtube-dl GUI.csprojResolveAssemblyReference.cache
+C:\Users\Francesco\Documents\GitHub\JAYG\JAYG\youtube-dl GUI\obj\Debug\youtube_dl_GUI.Form1.resources
+C:\Users\Francesco\Documents\GitHub\JAYG\JAYG\youtube-dl GUI\obj\Debug\JAYG.Properties.Resources.resources
+C:\Users\Francesco\Documents\GitHub\JAYG\JAYG\youtube-dl GUI\obj\Debug\youtube-dl GUI.csproj.GenerateResource.Cache
+C:\Users\Francesco\Documents\GitHub\JAYG\JAYG\youtube-dl GUI\obj\Debug\youtube-dl GUI.csproj.CoreCompileInputs.cache
+C:\Users\Francesco\Documents\GitHub\JAYG\JAYG\youtube-dl GUI\obj\Debug\JAYG.exe
+C:\Users\Francesco\Documents\GitHub\JAYG\JAYG\youtube-dl GUI\obj\Debug\JAYG.pdb
