@@ -99,7 +99,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="flowRoot4146.png.ico" />
     <Content Include="icon.ico" />
   </ItemGroup>
   <ItemGroup>
