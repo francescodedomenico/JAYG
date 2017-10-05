@@ -11,7 +11,7 @@ Additionally you will need the [Microsoft Visual C++ 2010 Redistributable Packag
 You can build this software by your own using [Microsoft Visual Studio 2015](https://www.visualstudio.com/vs/older-downloads/).
 Once you've compiled the solution, create a bin folder in the same directory where JAYG.exe is and place the [youtube-dl.exe](https://rg3.github.io/youtube-dl/download.html) and the [ffmpeg.exe](https://ffmpeg.zeranoe.com/builds/) inside.
 ## Download
-Binary packages are found on the [releases page](https://github.com/francescodedomenico/JAYG/releases)!
+Binary packages are found on the [releases page](https://github.com/francescodedomenico/JAYG/releases)! These packages already includes the ffmpeg and youtube-dl executables.
 ## Licence
 Copyright 2017 Francesco De Domenico
 
