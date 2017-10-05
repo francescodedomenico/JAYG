@@ -46,7 +46,7 @@
             // 
             this.ShellOutputForm.AccessibleDescription = "ShellOutputForm";
             this.ShellOutputForm.AccessibleName = "ShellOutputForm";
-            this.ShellOutputForm.Location = new System.Drawing.Point(12, 146);
+            this.ShellOutputForm.Location = new System.Drawing.Point(12, 116);
             this.ShellOutputForm.Multiline = true;
             this.ShellOutputForm.Name = "ShellOutputForm";
             this.ShellOutputForm.ReadOnly = true;
@@ -124,7 +124,7 @@
             // labelVersion
             // 
             this.labelVersion.AutoSize = true;
-            this.labelVersion.Location = new System.Drawing.Point(293, 241);
+            this.labelVersion.Location = new System.Drawing.Point(293, 211);
             this.labelVersion.Name = "labelVersion";
             this.labelVersion.Size = new System.Drawing.Size(80, 13);
             this.labelVersion.TabIndex = 8;
@@ -133,7 +133,7 @@
             // labelUpdates
             // 
             this.labelUpdates.AutoSize = true;
-            this.labelUpdates.Location = new System.Drawing.Point(193, 241);
+            this.labelUpdates.Location = new System.Drawing.Point(193, 211);
             this.labelUpdates.Name = "labelUpdates";
             this.labelUpdates.Size = new System.Drawing.Size(94, 13);
             this.labelUpdates.TabIndex = 9;
@@ -145,7 +145,7 @@
             // labelAuthor
             // 
             this.labelAuthor.AutoSize = true;
-            this.labelAuthor.Location = new System.Drawing.Point(12, 241);
+            this.labelAuthor.Location = new System.Drawing.Point(12, 211);
             this.labelAuthor.Name = "labelAuthor";
             this.labelAuthor.Size = new System.Drawing.Size(38, 13);
             this.labelAuthor.TabIndex = 10;
@@ -159,7 +159,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(386, 263);
+            this.ClientSize = new System.Drawing.Size(386, 228);
             this.Controls.Add(this.labelAuthor);
             this.Controls.Add(this.labelUpdates);
             this.Controls.Add(this.labelVersion);
