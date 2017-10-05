@@ -32,11 +32,14 @@
             this.ShellOutputForm = new System.Windows.Forms.TextBox();
             this.buttonDownloadVideo = new System.Windows.Forms.Button();
             this.linkTextBox = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.labelLink = new System.Windows.Forms.Label();
             this.buttonDownloadAudio = new System.Windows.Forms.Button();
             this.comboAudioBox = new System.Windows.Forms.ComboBox();
-            this.label2 = new System.Windows.Forms.Label();
+            this.labelAudioFormat = new System.Windows.Forms.Label();
             this.buttonUpdate = new System.Windows.Forms.Button();
+            this.labelVersion = new System.Windows.Forms.Label();
+            this.labelUpdates = new System.Windows.Forms.Label();
+            this.labelAuthor = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // ShellOutputForm
@@ -68,14 +71,14 @@
             this.linkTextBox.Size = new System.Drawing.Size(328, 20);
             this.linkTextBox.TabIndex = 2;
             // 
-            // label1
+            // labelLink
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(4, 15);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(30, 13);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Link:";
+            this.labelLink.AutoSize = true;
+            this.labelLink.Location = new System.Drawing.Point(4, 15);
+            this.labelLink.Name = "labelLink";
+            this.labelLink.Size = new System.Drawing.Size(30, 13);
+            this.labelLink.TabIndex = 3;
+            this.labelLink.Text = "Link:";
             // 
             // buttonDownloadAudio
             // 
@@ -99,14 +102,14 @@
             this.comboAudioBox.Size = new System.Drawing.Size(74, 21);
             this.comboAudioBox.TabIndex = 5;
             // 
-            // label2
+            // labelAudioFormat
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(224, 87);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(69, 13);
-            this.label2.TabIndex = 6;
-            this.label2.Text = "Audio format:";
+            this.labelAudioFormat.AutoSize = true;
+            this.labelAudioFormat.Location = new System.Drawing.Point(224, 87);
+            this.labelAudioFormat.Name = "labelAudioFormat";
+            this.labelAudioFormat.Size = new System.Drawing.Size(69, 13);
+            this.labelAudioFormat.TabIndex = 6;
+            this.labelAudioFormat.Text = "Audio format:";
             // 
             // buttonUpdate
             // 
@@ -118,17 +121,53 @@
             this.buttonUpdate.UseVisualStyleBackColor = true;
             this.buttonUpdate.Click += new System.EventHandler(this.buttonUpdate_Click);
             // 
+            // labelVersion
+            // 
+            this.labelVersion.AutoSize = true;
+            this.labelVersion.Location = new System.Drawing.Point(293, 241);
+            this.labelVersion.Name = "labelVersion";
+            this.labelVersion.Size = new System.Drawing.Size(80, 13);
+            this.labelVersion.TabIndex = 8;
+            this.labelVersion.Text = "version 1.0.0a3";
+            // 
+            // labelUpdates
+            // 
+            this.labelUpdates.AutoSize = true;
+            this.labelUpdates.Location = new System.Drawing.Point(193, 241);
+            this.labelUpdates.Name = "labelUpdates";
+            this.labelUpdates.Size = new System.Drawing.Size(94, 13);
+            this.labelUpdates.TabIndex = 9;
+            this.labelUpdates.Text = "Check for updates";
+            this.labelUpdates.Click += new System.EventHandler(this.labelUpdates_Click);
+            this.labelUpdates.MouseEnter += new System.EventHandler(this.labelUpdates_MouseEnter);
+            this.labelUpdates.MouseLeave += new System.EventHandler(this.labelUpdates_MouseLeave);
+            // 
+            // labelAuthor
+            // 
+            this.labelAuthor.AutoSize = true;
+            this.labelAuthor.Location = new System.Drawing.Point(12, 241);
+            this.labelAuthor.Name = "labelAuthor";
+            this.labelAuthor.Size = new System.Drawing.Size(38, 13);
+            this.labelAuthor.TabIndex = 10;
+            this.labelAuthor.Text = "Author";
+            this.labelAuthor.Click += new System.EventHandler(this.labelAuthor_Click);
+            this.labelAuthor.MouseEnter += new System.EventHandler(this.labelAuthor_MouseEnter);
+            this.labelAuthor.MouseLeave += new System.EventHandler(this.labelAuthor_MouseLeave);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(386, 249);
+            this.ClientSize = new System.Drawing.Size(386, 263);
+            this.Controls.Add(this.labelAuthor);
+            this.Controls.Add(this.labelUpdates);
+            this.Controls.Add(this.labelVersion);
             this.Controls.Add(this.buttonUpdate);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.labelAudioFormat);
             this.Controls.Add(this.comboAudioBox);
             this.Controls.Add(this.buttonDownloadAudio);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.labelLink);
             this.Controls.Add(this.linkTextBox);
             this.Controls.Add(this.buttonDownloadVideo);
             this.Controls.Add(this.ShellOutputForm);
@@ -147,11 +186,14 @@
         private System.Windows.Forms.TextBox ShellOutputForm;
         private System.Windows.Forms.Button buttonDownloadVideo;
         private System.Windows.Forms.TextBox linkTextBox;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label labelLink;
         private System.Windows.Forms.Button buttonDownloadAudio;
         private System.Windows.Forms.ComboBox comboAudioBox;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label labelAudioFormat;
         private System.Windows.Forms.Button buttonUpdate;
+        private System.Windows.Forms.Label labelVersion;
+        private System.Windows.Forms.Label labelUpdates;
+        private System.Windows.Forms.Label labelAuthor;
     }
 }
 

@@ -49,7 +49,8 @@ namespace youtube_dl_GUI
         {
             InitializeComponent();
             Thread UIThread = new Thread(updateUI);
-            comboAudioBox.SelectedIndex = 0;
+            comboAudioBox.SelectedIndex = 0; /// We set default choice for audio as MP3
+            ///Starting UIThread
             UIThread.IsBackground = true;
             UIThread.Start();
         }
@@ -91,26 +92,26 @@ namespace youtube_dl_GUI
                     break;
             }
             var audioOption = "--extract-audio --audio-format " + audioFormat;
-            using (Process sortProcess = new Process())
+            using (Process cmdProcess = new Process())
             {
-                sortProcess.StartInfo.FileName = @".\bin\youtube-dl.exe";
-                sortProcess.StartInfo.Arguments = downloadLink + " " + ffmpegpath + " " + audioOption;
-                sortProcess.StartInfo.CreateNoWindow = true; 
-                sortProcess.StartInfo.UseShellExecute = false;
-                sortProcess.StartInfo.RedirectStandardOutput = true;
+                cmdProcess.StartInfo.FileName = @".\bin\youtube-dl.exe";
+                cmdProcess.StartInfo.Arguments = downloadLink + " " + ffmpegpath + " " + audioOption;
+                cmdProcess.StartInfo.CreateNoWindow = true; 
+                cmdProcess.StartInfo.UseShellExecute = false;
+                cmdProcess.StartInfo.RedirectStandardOutput = true;
 
                 // Set event handler
-                sortProcess.OutputDataReceived += new DataReceivedEventHandler(TextBoxHandler);
-                sortProcess.ErrorDataReceived += new DataReceivedEventHandler(TextBoxHandler);
+                cmdProcess.OutputDataReceived += new DataReceivedEventHandler(TextBoxHandler);
+                cmdProcess.ErrorDataReceived += new DataReceivedEventHandler(TextBoxHandler);
 
 
                 // Start the process.
-                sortProcess.Start();
+                cmdProcess.Start();
 
                 // Start the asynchronous read
-                sortProcess.BeginOutputReadLine();
+                cmdProcess.BeginOutputReadLine();
 
-                sortProcess.WaitForExit();
+                cmdProcess.WaitForExit();
                 performingAction = "none";
             }
             ShellOutputForm.AppendText("Audio download has ended.\r\n");
@@ -126,26 +127,26 @@ namespace youtube_dl_GUI
             /// Disable controls
             disableControls();
 
-            using (Process sortProcess = new Process())
+            using (Process cmdProcess = new Process())
             {
-                sortProcess.StartInfo.FileName = @".\bin\youtube-dl.exe";
-                sortProcess.StartInfo.Arguments = "--update";
-                sortProcess.StartInfo.CreateNoWindow = true;
-                sortProcess.StartInfo.UseShellExecute = false;
-                sortProcess.StartInfo.RedirectStandardOutput = true;
+                cmdProcess.StartInfo.FileName = @".\bin\youtube-dl.exe";
+                cmdProcess.StartInfo.Arguments = "--update";
+                cmdProcess.StartInfo.CreateNoWindow = true;
+                cmdProcess.StartInfo.UseShellExecute = false;
+                cmdProcess.StartInfo.RedirectStandardOutput = true;
 
                 // Set event handler
-                sortProcess.OutputDataReceived += new DataReceivedEventHandler(TextBoxHandler);
-                sortProcess.ErrorDataReceived += new DataReceivedEventHandler(TextBoxHandler);
+                cmdProcess.OutputDataReceived += new DataReceivedEventHandler(TextBoxHandler);
+                cmdProcess.ErrorDataReceived += new DataReceivedEventHandler(TextBoxHandler);
 
 
                 // Start the process.
-                sortProcess.Start();
+                cmdProcess.Start();
 
                 // Start the asynchronous read
-                sortProcess.BeginOutputReadLine();
+                cmdProcess.BeginOutputReadLine();
 
-                sortProcess.WaitForExit();
+                cmdProcess.WaitForExit();
                 performingAction = "none";
             }
             ShellOutputForm.AppendText("Update has ended.\r\n");
@@ -162,26 +163,26 @@ namespace youtube_dl_GUI
             /// Disable controls
             disableControls();
 
-            using (Process sortProcess = new Process())
+            using (Process cmdProcess = new Process())
             {
-                sortProcess.StartInfo.FileName = @".\bin\youtube-dl.exe";
-                sortProcess.StartInfo.Arguments = downloadLink+" "+ffmpegpath;
-                sortProcess.StartInfo.CreateNoWindow = true;
-                sortProcess.StartInfo.UseShellExecute = false;
-                sortProcess.StartInfo.RedirectStandardOutput = true;
+                cmdProcess.StartInfo.FileName = @".\bin\youtube-dl.exe";
+                cmdProcess.StartInfo.Arguments = downloadLink+" "+ffmpegpath;
+                cmdProcess.StartInfo.CreateNoWindow = true;
+                cmdProcess.StartInfo.UseShellExecute = false;
+                cmdProcess.StartInfo.RedirectStandardOutput = true;
 
                 // Set event handler
-                sortProcess.OutputDataReceived += new DataReceivedEventHandler(TextBoxHandler);
-                sortProcess.ErrorDataReceived += new DataReceivedEventHandler(TextBoxHandler);
+                cmdProcess.OutputDataReceived += new DataReceivedEventHandler(TextBoxHandler);
+                cmdProcess.ErrorDataReceived += new DataReceivedEventHandler(TextBoxHandler);
 
 
                 // Start the process.
-                sortProcess.Start();
+                cmdProcess.Start();
 
                 // Start the asynchronous read
-                sortProcess.BeginOutputReadLine();
+                cmdProcess.BeginOutputReadLine();
 
-                sortProcess.WaitForExit();
+                cmdProcess.WaitForExit();
                 performingAction = "none";
             }
             ShellOutputForm.AppendText("Download has ended.\r\n");
@@ -219,6 +220,36 @@ namespace youtube_dl_GUI
         {
             Thread updateThread = new Thread(audioYTDL);
             updateThread.Start();
+        }
+
+        private void labelUpdates_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://github.com/francescodedomenico/JAYG/releases");
+        }
+
+        private void labelAuthor_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://github.com/francescodedomenico");
+        }
+
+        private void labelAuthor_MouseEnter(object sender, EventArgs e)
+        {
+            labelAuthor.Font = new Font(labelAuthor.Font.Name, labelAuthor.Font.SizeInPoints, FontStyle.Underline);
+        }
+
+        private void labelAuthor_MouseLeave(object sender, EventArgs e)
+        {
+            labelAuthor.Font = new Font(labelAuthor.Font.Name, labelAuthor.Font.SizeInPoints, FontStyle.Regular);
+        }
+
+        private void labelUpdates_MouseEnter(object sender, EventArgs e)
+        {
+            labelUpdates.Font = new Font(labelUpdates.Font.Name, labelUpdates.Font.SizeInPoints, FontStyle.Underline);
+        }
+
+        private void labelUpdates_MouseLeave(object sender, EventArgs e)
+        {
+            labelUpdates.Font = new Font(labelUpdates.Font.Name, labelUpdates.Font.SizeInPoints, FontStyle.Regular);
         }
     }
 }
