@@ -251,5 +251,20 @@ namespace youtube_dl_GUI
         {
             labelUpdates.Font = new Font(labelUpdates.Font.Name, labelUpdates.Font.SizeInPoints, FontStyle.Regular);
         }
+
+        private void labelSupportedwebsites_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://rg3.github.io/youtube-dl/supportedsites.html");
+        }
+
+        private void labelSupportedwebsites_MouseEnter(object sender, EventArgs e)
+        {
+            labelSupportedwebsites.Font = new Font(labelSupportedwebsites.Font.Name, labelSupportedwebsites.Font.SizeInPoints, FontStyle.Underline);
+        }
+
+        private void labelSupportedwebsites_MouseLeave(object sender, EventArgs e)
+        {
+            labelSupportedwebsites.Font = new Font(labelSupportedwebsites.Font.Name, labelSupportedwebsites.Font.SizeInPoints, FontStyle.Regular);
+        }
     }
 }

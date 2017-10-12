@@ -40,6 +40,7 @@
             this.labelVersion = new System.Windows.Forms.Label();
             this.labelUpdates = new System.Windows.Forms.Label();
             this.labelAuthor = new System.Windows.Forms.Label();
+            this.labelSupportedwebsites = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // ShellOutputForm
@@ -128,7 +129,7 @@
             this.labelVersion.Name = "labelVersion";
             this.labelVersion.Size = new System.Drawing.Size(80, 13);
             this.labelVersion.TabIndex = 8;
-            this.labelVersion.Text = "version 1.0.0a3";
+            this.labelVersion.Text = "version 1.0.0a4";
             // 
             // labelUpdates
             // 
@@ -154,12 +155,25 @@
             this.labelAuthor.MouseEnter += new System.EventHandler(this.labelAuthor_MouseEnter);
             this.labelAuthor.MouseLeave += new System.EventHandler(this.labelAuthor_MouseLeave);
             // 
+            // labelSupportedwebsites
+            // 
+            this.labelSupportedwebsites.AutoSize = true;
+            this.labelSupportedwebsites.Location = new System.Drawing.Point(87, 211);
+            this.labelSupportedwebsites.Name = "labelSupportedwebsites";
+            this.labelSupportedwebsites.Size = new System.Drawing.Size(100, 13);
+            this.labelSupportedwebsites.TabIndex = 11;
+            this.labelSupportedwebsites.Text = "Supported websites";
+            this.labelSupportedwebsites.Click += new System.EventHandler(this.labelSupportedwebsites_Click);
+            this.labelSupportedwebsites.MouseEnter += new System.EventHandler(this.labelSupportedwebsites_MouseEnter);
+            this.labelSupportedwebsites.MouseLeave += new System.EventHandler(this.labelSupportedwebsites_MouseLeave);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(386, 228);
+            this.Controls.Add(this.labelSupportedwebsites);
             this.Controls.Add(this.labelAuthor);
             this.Controls.Add(this.labelUpdates);
             this.Controls.Add(this.labelVersion);
@@ -194,6 +208,7 @@
         private System.Windows.Forms.Label labelVersion;
         private System.Windows.Forms.Label labelUpdates;
         private System.Windows.Forms.Label labelAuthor;
+        private System.Windows.Forms.Label labelSupportedwebsites;
     }
 }
 
