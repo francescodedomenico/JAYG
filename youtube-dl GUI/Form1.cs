@@ -9,21 +9,68 @@ using System.Threading.Tasks;
 using System.Threading;
 using System.Windows.Forms;
 using System.Diagnostics;
+using System.IO;
+using JAYG;
 
 namespace youtube_dl_GUI
 {
 
     public partial class Form1 : Form
     {
+
         public String buffer = "";
         public String lastbuffer = "";
         public String past = "";
         public String performingAction = "none";
+        private Dictionary<String, String> preferences = new Dictionary<String, String>();
         public static class TextBuffer
         {
             public static String buffer { get; set; }
         }
 
+        private void loadPreferences()
+        {
+            String line;
+            if (File.Exists("preferences.dat"))
+            {
+                try
+                {
+                    StreamReader sr = new StreamReader("preferences.dat");
+                    line = sr.ReadLine();
+                    while (line != null)
+                    {
+                        if (line.Contains("outputfolder"))
+                        {
+                            String[] parts = line.Split('\t');
+                            preferences["outputfolder"] = parts[1];
+                        }
+                        line = sr.ReadLine();
+                    }
+                    sr.Close();
+                }catch(Exception e)
+                {
+                    Console.WriteLine("Exception: " + e.Message);
+                }
+            }
+            else
+            {
+                /*
+                 * We create an empty preferences file
+                 */
+                FileStream pref_file = File.Create("preferences.dat");
+                pref_file.Close();
+                return;
+            }
+        }
+        private void savePreferences()
+        {
+            StreamWriter sw = new StreamWriter("preferences.dat");
+            foreach(KeyValuePair<String,String> entry in preferences)
+            {
+                sw.WriteLine(entry.Key + '\t' + entry.Value);
+            }
+            sw.Close();
+        }
         private void updateUI()
         {
             while (true)
@@ -53,6 +100,17 @@ namespace youtube_dl_GUI
             ///Starting UIThread
             UIThread.IsBackground = true;
             UIThread.Start();
+            loadPreferences();
+            if (!preferences.ContainsKey("outputfolder"))
+            {
+                label_outputfolder_path.Text = Directory.GetCurrentDirectory() + "\\downloads";
+                preferences["outputfolder"] = Directory.GetCurrentDirectory() + "\\downloads";
+                savePreferences();
+            }
+            else
+            {
+                label_outputfolder_path.Text = preferences["outputfolder"];
+            }
         }
         private void enableControls()
         {
@@ -72,6 +130,7 @@ namespace youtube_dl_GUI
             performingAction = "downloading";
             var downloadLink = linkTextBox.Text;
             var ffmpegpath = "--ffmpeg-location /bin/ffmpeg.exe";
+            var outputpath = "-o " + preferences["outputfolder"] + "\\%(title)s.%(ext)s";
             var audioFormat = "";
             /// Disable controls
             disableControls();
@@ -95,7 +154,7 @@ namespace youtube_dl_GUI
             using (Process cmdProcess = new Process())
             {
                 cmdProcess.StartInfo.FileName = @".\bin\youtube-dl.exe";
-                cmdProcess.StartInfo.Arguments = downloadLink + " " + ffmpegpath + " " + audioOption;
+                cmdProcess.StartInfo.Arguments = downloadLink + " " + ffmpegpath + " " + audioOption + " " + outputpath; ;
                 cmdProcess.StartInfo.CreateNoWindow = true; 
                 cmdProcess.StartInfo.UseShellExecute = false;
                 cmdProcess.StartInfo.RedirectStandardOutput = true;
@@ -160,13 +219,14 @@ namespace youtube_dl_GUI
             performingAction = "downloading";
             var downloadLink = linkTextBox.Text;
             var ffmpegpath = "--ffmpeg-location /bin/ffmpeg.exe";
+            var outputpath = "-o " + preferences["outputfolder"] + "\\%(title)s.%(ext)s";
             /// Disable controls
             disableControls();
 
             using (Process cmdProcess = new Process())
             {
                 cmdProcess.StartInfo.FileName = @".\bin\youtube-dl.exe";
-                cmdProcess.StartInfo.Arguments = downloadLink+" "+ffmpegpath;
+                cmdProcess.StartInfo.Arguments = "-f bestvideo+bestaudio " + downloadLink + " " + ffmpegpath+ " "+ outputpath;
                 cmdProcess.StartInfo.CreateNoWindow = true;
                 cmdProcess.StartInfo.UseShellExecute = false;
                 cmdProcess.StartInfo.RedirectStandardOutput = true;
@@ -265,6 +325,47 @@ namespace youtube_dl_GUI
         private void labelSupportedwebsites_MouseLeave(object sender, EventArgs e)
         {
             labelSupportedwebsites.Font = new Font(labelSupportedwebsites.Font.Name, labelSupportedwebsites.Font.SizeInPoints, FontStyle.Regular);
+        }
+
+        private void label_change_output_folder_Click(object sender, EventArgs e)
+        {
+            using (var fbd = new FolderBrowserDialog())
+            {
+                DialogResult result = fbd.ShowDialog();
+
+                if (result == DialogResult.OK && !string.IsNullOrWhiteSpace(fbd.SelectedPath))
+                {
+                    label_outputfolder_path.Text = fbd.SelectedPath;
+                    preferences["outputfolder"] = fbd.SelectedPath;
+                    savePreferences();
+                }
+            }
+        }
+
+        private void label_change_output_folder_MouseEnter(object sender, EventArgs e)
+        {
+            label_change_output_folder.Font = new Font(label_change_output_folder.Font.Name, label_change_output_folder.Font.SizeInPoints, FontStyle.Underline);
+        }
+
+        private void label_change_output_folder_MouseLeave(object sender, EventArgs e)
+        {
+            label_change_output_folder.Font = new Font(label_change_output_folder.Font.Name, label_change_output_folder.Font.SizeInPoints, FontStyle.Regular);
+        }
+
+        private void donate_label_Click(object sender, EventArgs e)
+        {
+            DonateForm donate = new DonateForm();
+            donate.Show();
+        }
+
+        private void donate_label_MouseEnter(object sender, EventArgs e)
+        {
+            donate_label.Font = new Font(donate_label.Font.Name, donate_label.Font.SizeInPoints, FontStyle.Underline);
+        }
+
+        private void donate_label_MouseLeave(object sender, EventArgs e)
+        {
+            donate_label.Font = new Font(donate_label.Font.Name, donate_label.Font.SizeInPoints, FontStyle.Regular);
         }
     }
 }

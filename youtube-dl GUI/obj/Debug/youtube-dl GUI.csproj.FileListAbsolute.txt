@@ -18,3 +18,14 @@ C:\Users\Francesco\Documents\GitHub\JAYG\youtube-dl GUI\obj\Debug\youtube-dl GUI
 C:\Users\Francesco\Documents\GitHub\JAYG\youtube-dl GUI\obj\Debug\youtube-dl GUI.csproj.CoreCompileInputs.cache
 C:\Users\Francesco\Documents\GitHub\JAYG\youtube-dl GUI\obj\Debug\JAYG.exe
 C:\Users\Francesco\Documents\GitHub\JAYG\youtube-dl GUI\obj\Debug\JAYG.pdb
+D:\OneDrive\github\JAYG\youtube-dl GUI\bin\Debug\JAYG.exe.config
+D:\OneDrive\github\JAYG\youtube-dl GUI\bin\Debug\JAYG.exe
+D:\OneDrive\github\JAYG\youtube-dl GUI\bin\Debug\JAYG.pdb
+D:\OneDrive\github\JAYG\youtube-dl GUI\obj\Debug\youtube_dl_GUI.Form1.resources
+D:\OneDrive\github\JAYG\youtube-dl GUI\obj\Debug\JAYG.Properties.Resources.resources
+D:\OneDrive\github\JAYG\youtube-dl GUI\obj\Debug\youtube-dl GUI.csproj.GenerateResource.Cache
+D:\OneDrive\github\JAYG\youtube-dl GUI\obj\Debug\youtube-dl GUI.csproj.CoreCompileInputs.cache
+D:\OneDrive\github\JAYG\youtube-dl GUI\obj\Debug\JAYG.exe
+D:\OneDrive\github\JAYG\youtube-dl GUI\obj\Debug\JAYG.pdb
+D:\OneDrive\github\JAYG\youtube-dl GUI\obj\Debug\youtube-dl GUI.csprojResolveAssemblyReference.cache
+D:\OneDrive\github\JAYG\youtube-dl GUI\obj\Debug\JAYG.DonateForm.resources
