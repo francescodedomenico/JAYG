@@ -62,3 +62,12 @@ youtube-dl GUI/obj/Debug/youtube-dl GUI.csproj.FileListAbsolute.txt
 youtube-dl GUI/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
 youtube-dl GUI/obj/Debug/youtube-dl GUI.csproj.CoreCompileInputs.cache
 .vs/youtube-dl GUI/v15/sqlite3/storage.ide
+*.lock
+.vs/youtube-dl GUI/v15/Server/sqlite3/storage.ide
+*.ide-shm
+*.ide-wal
+*.ide
+youtube-dl GUI/bin/Debug/JAYG.exe
+*.cache
+youtube-dl GUI/obj/Debug/JAYG.DonateForm.resources
+.vs/youtube-dl GUI/v15/sqlite3/storage.ide
