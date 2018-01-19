@@ -28,4 +28,4 @@ See the License for the specific language governing permissions and
 limitations under the License.
 ## Buy me a beer!
 I hope you enjoyed JAYG, please, consider donating me, I accept bitcoins!
-[Donate](bitcoin:1Mua9mUsWrn3RUntwdeuSfw5PdHyds6Big)
+Donate 1Mua9mUsWrn3RUntwdeuSfw5PdHyds6Big
